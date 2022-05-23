@@ -1,7 +1,12 @@
 package lifanov;
 
 public class Poster {
+    private String[] films;
     private int lastFilms;
+
+    public Poster(String[] films) {
+        this.films = films;
+    }
 
     public Poster() {
     }
@@ -11,8 +16,9 @@ public class Poster {
     }
 
     public String[] addFilm(String[] films) {
-        String newFilm = "Морбиус";
-        String[] tmp = new String[films.length + 1];
+        String newFilm = new String("Морбиус");
+        int length = films.length + 1;
+        String[] tmp = new String[length];
         for (int i = 0;
              i < films.length; i++) {
             tmp[i] = films[i];
