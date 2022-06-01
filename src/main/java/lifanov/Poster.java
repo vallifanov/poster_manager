@@ -1,18 +1,22 @@
 package lifanov;
 
 public class Poster {
-    private String[] films;
-    private int lastFilms;
+    private String[] films = new String[0];
+    private int lastFilms = 10;
 
     public Poster(String[] films) {
         this.films = films;
     }
 
-    public Poster() {
+    public String[] getFilms() {
+        return films;
     }
 
-    public Poster(int lastFilms) {
-        this.lastFilms = 10;
+    public void setFilms(String[] films) {
+        this.films = films;
+    }
+
+    public Poster() {
     }
 
     public String[] addFilm(String[] films) {
@@ -32,7 +36,7 @@ public class Poster {
         return films;
     }
 
-    public String[] findLast(String[] films) {
+    public String[] findLast() {
 
         int fistMovies = films.length;
         if (fistMovies > lastFilms) {
@@ -41,10 +45,11 @@ public class Poster {
 
         String[] tmp = new String[fistMovies];
         for (int i = 0; i < fistMovies; i++) {
-            int index = fistMovies - i;
-            tmp [i] = films[index];
+            int index = fistMovies - i - 1;
+            tmp[i] = films[index];
         }
         return tmp;
     }
+
 }
 

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PosterTest {
+    Poster film = new Poster();
     String[] films = new String[]{
             "Бладшот",
             "Вперёд",
@@ -43,12 +44,13 @@ class PosterTest {
 
     @Test
     void findLast() {
-        Poster fil = new Poster(10);
-        fil.findLast(films);
+        String[] fil = new String[]{"Вперёд", "Отель 'Белград'", "Джентельмены", "Человек-Невидимка", "Тролли. Мировой тур", "Номер один", "Алая ведьма", "Падение Луны", "Не смотрите наверх", "Лулу и Бригс"};
+        film.setFilms(fil);
 
-        String[] expected = {"Лулу и Бригс", "Не смотрите наверх", "Падение Луны", "Алая ведьма", "Номер один", "Тролли. Мировой тур", "Человек-Невидимка", "Джентельмены", "Отель 'Белград'", "Вперёд"};
-        String[] actual = fil.findLast(films);
+        String[] expected = new String[]{"Лулу и Бригс", "Не смотрите наверх", "Падение Луны", "Алая ведьма", "Номер один", "Тролли. Мировой тур", "Человек-Невидимка", "Джентельмены", "Отель 'Белград'", "Вперёд"};
+        String[] actual = film.findLast();
 
         assertArrayEquals(expected, actual);
     }
+
 }
